@@ -1,0 +1,18 @@
+CREATE DATABASE STUDENT;
+
+CREATE TABLE marksofstudent(
+marks int,
+name varchar(50),
+city varchar(50)
+);
+
+INSERT INTO marksofstudent(marks,name,city)
+values
+
+(46,"Adinath","Dattawad");
+
+INSERT INTO marksofstudent(marks,name,city) values (67,"Dhiraj", "Kolhapur");
+INSERT INTO marksofstudent(marks,name,city) values (60,"Ajay", "Aajra");
+INSERT INTO marksofstudent(marks,name,city) values (69,"Kiran", "Akluj");
+INSERT INTO marksofstudent(marks,name,city) values (60,"Abhishek", "Ichalkaranji");
+select *from marksofstudent;
