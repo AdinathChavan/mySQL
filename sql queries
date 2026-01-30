@@ -1,0 +1,57 @@
+SELECT * FROM patients
+
+SELECT
+  first_name,
+  last_name,
+  province_name
+FROM patients
+  JOIN province_names ON province_names.province_id = patients.province_id;
+  
+SELECT COUNT(*) AS total_patients
+FROM patients
+WHERE YEAR(birth_date) = 2010; 
+
+select first_name, last_name, max(height) from patients ;
+
+select *from patients where patient_id In (1,45,534,879,1000);
+
+select count(patient_id) from admissions;
+
+select *from admissions where admission_date=discharge_date;
+
+select patient_id, count(patient_id) as total_admissions from admissions where patient_id=579;
+
+SELECT DISTINCT(city) AS unique_cities
+FROM patients
+WHERE province_id = 'NS';
+
+select first_name, last_name, birth_date from patients where height>160 and weight>70;
+
+select first_name, last_name, allergies from patients where allergies Is not NULL and city="Hamilton";
+
+select distinct(year(birth_date)) as birth_year from patients order by birth_year;
+
+SELECT first_name
+FROM patients
+GROUP BY first_name
+HAVING COUNT(first_name) = 1
+
+  select patient_id,
+  first_name
+FROM patients
+WHERE first_name LIKE 's____%s';
+
+select patients.patient_id, patients.first_name,
+	patients.last_name
+    from patients  inner join admissions
+    on patients.patient_id = admissions.patient_id where admissions.diagnosis="Dementia";
+    
+SELECT first_name
+FROM patients
+order by
+  len(first_name),
+  first_name asc; 
+
+
+
+
